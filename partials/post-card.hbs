@@ -8,7 +8,7 @@
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
                 {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
+                    <span class="post-card-primary-tag">{{primary_tag.name}}</span>
                 {{/if}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
@@ -17,10 +17,20 @@
             </section>
         </a>
         <footer class="post-card-meta">
+
+            {{#if tags}}
+            {{#foreach tags}}
+                <a href="{{url}}" class="post-card-tag">{{name}}{{#if @last}} {{else}}, {{/if}}</a>
+            {{/foreach}}
+            {{/if}}
+
+            {{!-- 
             {{#if author.profile_image}}
                 <img class="author-profile-image" src="{{author.profile_image}}" alt="{{author.name}}" />
             {{/if}}
             <span class="post-card-author">{{author}}</span>
+            --}}
+
         </footer>
     </div>
 </article>

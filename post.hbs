@@ -13,7 +13,7 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 <main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
+    <div class="inner inner-post">
 
         <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
@@ -34,6 +34,14 @@ into the {body} of the default.hbs template --}}
 
             <section class="post-full-content">
                 {{content}}
+
+                <p>
+                {{#if tags}}
+                {{#foreach tags}}
+                    <a href={{url}} class="post-card-tag">{{name}}{{#if @last}} {{else}}, {{/if}}</a>
+                {{/foreach}}
+                {{/if}}
+                </p>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}
@@ -69,11 +77,11 @@ into the {body} of the default.hbs template --}}
                 {{/author}}
             </footer>
 
+            
             {{!--
-
             If you use Disqus comments, just uncomment this block.
             The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
+            should be replaced with your own Disqus site-id.--}}
 
             <section class="post-full-comments">
                 <div id="disqus_thread"></div>
@@ -84,13 +92,13 @@ into the {body} of the default.hbs template --}}
                     };
                     (function() {
                         var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
+                        s.src = 'https://fridamania.disqus.com/embed.js';
                         s.setAttribute('data-timestamp', +new Date());
                         (d.head || d.body).appendChild(s);
                     })();
                 </script>
             </section>
-            --}}
+            
 
         </article>
 
