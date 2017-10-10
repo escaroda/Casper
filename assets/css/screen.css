@@ -28,6 +28,9 @@ production stylesheet in assets/built/screen.css
 /* ---------------------------------------------------------- */
 @import "global.css";
 
+::-moz-selection { background: #eddcf5; }
+::selection { background: #eddcf5; }
+
 body {
     background: #fbf9fb;
 }
@@ -337,17 +340,17 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 .subscribe-button {
     display: block;
     padding: 4px 10px;
-    border: #fff 1px solid;
-    color: #fff;
+    border: 1px solid #969696;
+    color: #5d5d5d;
     font-size: 1.2rem;
     line-height: 1em;
     border-radius: 10px;
-    opacity: 0.8;
 }
 
 .subscribe-button:hover {
     text-decoration: none;
-    opacity: 1;
+    color: var(--purple);
+    border: 1px solid #800080
 }
 
 .rss-button {
@@ -1072,17 +1075,16 @@ Usage (In Ghost editor):
 
 .subscribe-form {
     margin: 1.5em 0;
-    padding: 6.5vw 7vw 7vw;
-    border: color(var(--whitegrey) l(+2%)) 1px solid;
+    padding: 3.5vw 7vw 2vw;
+    /* border: 1px solid #e9e8ea; */
     text-align: center;
-    background: color(var(--whitegrey) l(+4%));
-    border-radius: 7px;
+    /* background: #fbf9fc; */
 }
 
 .subscribe-form-title {
     margin: 0 0 3px 0;
     padding: 0;
-    color: var(--darkgrey);
+    color: #555;
     font-size: 3.5rem;
     line-height: 1;
     font-weight: 700;
@@ -1112,7 +1114,7 @@ Usage (In Ghost editor):
     display: block;
     width: 100%;
     padding: 10px;
-    border: color(var(--lightgrey) l(+7%)) 1px solid;
+    border: color(var(--lightgrey)) 1px solid;
     color: var(--midgrey);
     font-size: 1.8rem;
     line-height: 1em;
@@ -1141,12 +1143,7 @@ Usage (In Ghost editor):
     font-weight: 400;
     text-align: center;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
-    background: linear-gradient(
-    color(var(--purple) whiteness(+7%)),
-    color(var(--purple) lightness(-7%) saturation(-10%)) 60%,
-    color(var(--purple) lightness(-7%) saturation(-10%)) 90%,
-    color(var(--purple) lightness(-4%) saturation(-10%))
-    );
+    background: linear-gradient(#a73ade,#62098e 60%,#550d79 90%,#2d0540)
     border-radius: 5px;
     box-shadow: 0 0 0 1px inset rgba(0,0,0,0.14);
 
@@ -1155,7 +1152,7 @@ Usage (In Ghost editor):
 
 .subscribe-form button:active,
 .subscribe-form button:focus {
-    background: color(var(--purple) lightness(-9%) saturation(-10%));
+    background: color(var(--purple));
 }
 
 @media (max-width: 650px) {
