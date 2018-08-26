@@ -33,7 +33,10 @@ into the {body} of the default.hbs template --}}
             {{/if}}
 
             <section class="post-full-content">
-                {{content}}
+                <div class="post-content">
+                    {{content}}
+                </div>
+
                 <p>
                 {{#if tags}}
                 {{#foreach tags}}
@@ -42,9 +45,6 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
                 </p>
 
-                <div class="post-content">
-                    {{content}}
-                </div>
             </section>
 
             {{!-- Email subscribe form at the bottom of the page --}}

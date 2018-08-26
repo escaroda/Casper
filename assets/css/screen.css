@@ -474,9 +474,9 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
 }
 
 .post-card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*align-items: flex-end;*/
     padding: 0 25px 25px;
     line-height: 1.2rem;
 }
